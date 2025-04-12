@@ -10,12 +10,14 @@
 
 * This guide follow the steps and you will surely be able to create the firmware！
 
-* This guide whether the firmware made by  can meet your usage needs, please test it by yourself!
+* This guide  the firmware made by  can meet your usage needs, please test it by yourself!
 
 * This guide uses descriptions that even primary school children can understand!
 
 ### How to get help
 
-Official website:https://beater.solutions
+Official website：https://beater.solutions
 
-discord:https://discord.gg/beater
+discord：https://discord.gg/beater
+
+# Let's get started on the firmware!
