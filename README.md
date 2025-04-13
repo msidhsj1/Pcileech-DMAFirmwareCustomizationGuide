@@ -20,6 +20,8 @@ Official website：https://beater.solutions
 
 discord：https://discord.gg/beater
 
+🔥Beater's DC channel offers free firmware inside (including VMD which is overpriced by many firmware scammers lately), which is enough to deal with any anti-cheat detection and play the games you want to play! There is also a faster and more convenient firmwareflash in the channel, which supports all RS232 and CH347 DMAcards!
+
 # Let's start making firmware！
 
 ### Capturing real configuration space
@@ -88,12 +90,15 @@ The following one by one to check and find the changes, as shown in the figure a
 ![image.png](https://tc-cdn.flowus.cn/oss/ad146e45-a85f-4a99-a315-e0ad2fe20883/image.png?time=1744568100&token=c7104c0702470d640cc5f6f6dda4b627856b4857938cdfba02eb1e2cf1c17f33&role=free)
 ![image.png](https://tc-cdn.flowus.cn/oss/f21816e3-6b42-468d-8ffa-992e4e460f9d/image.png?time=1744568100&token=525b41d124a9563fdc0e6cfda9f8ee211db25d337c19beebd683564d8e860eb3&role=free)
 
-### Great job, now you can generate your handmade proprietary firmware!
+### Let's generate the firmware.
 
 Vivado left navigation bar click Generate Bitstream, pop-up window box out of the option to generate the firmware when the number of CPU cores used, the recommended default core number, if your computer configuration is higher can be appropriate to increase the output core. Generate the firmware pcileech _enigma_x1 _top.bin in the source code file under the impl_1 folder.
 
 ![image](https://github.com/user-attachments/assets/af09824b-143f-4639-9a0b-344104ce69f0)
 
+# Making a personal firmware based on open source source modifications is easier than you think, isn't it?
+
+😉Want to add more advanced features to the firmware to deal with stronger anti-cheats? I'll keep compiling guides when I have time!
 
 
 
