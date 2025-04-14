@@ -31,7 +31,8 @@ Beginners naturally take the easiest network card solid as a demonstration (demo
 Capture the real configuration space open TeleScan to find the network card you bought (class more bad to find you can choose other arrangement), see the picture box out of the card's Base Address Register column that Bar? Left-click to select Bar0 after the box will become blue, in the right side of the long bar in the digital box, long press 1 to replace all the numbers in the box for 1, at this time, the blue selected box value and the long box number 1 are green, right-click to select the Write ¡ú DOWORD to save (you can use Alt + Shift + D shortcut keys to save), save the changes in the blue selected box value and the long bar box value will become black! After saving the changes, the values in the blue checked box and the values in the long bar box will turn black, and so on, Bar0~Bar5 will be repaired to the correct Bar value (only Bar0/Bar2/Bar4 in the figure have values to be repaired). After fixing the Bar values, you can save the tlscan file (the save button is the second one in the second row).
 
 ![image](https://github.com/user-attachments/assets/921485fb-7e5d-4231-9652-e082a11bf311)
-![image.png](https://tc-cdn.flowus.cn/oss/f0a6f1e8-6806-47df-9a01-5b35798d01f0/image.png?time=1744568100&token=47663b7369807265c5897a51c1c2b169ebe79219a54024279e2ba1623fe54ade&role=free)
+![image](https://github.com/user-attachments/assets/5ea4bdb4-a1b4-450d-95fd-8a35e43b60b3)
+
 
 ### pcileech_cfgspace.coe
 
@@ -47,19 +48,20 @@ pcileech_fifo.sv file in your source code decompression src folder, you can use 
 
 If you want to change the value after rw[143:128]~rw[199:192], you can fill in the corresponding value read by TeleScan backwards or randomly (the effect is the same).
 
-![image.png](https://tc-cdn.flowus.cn/oss/24536238-e847-4856-8420-fa2f8ae9a639/image.png?time=1744568100&token=1f4b710074faf5e29cec9bdc21fce55cf8c3a05dc3f4b59b77d94228890525f2&role=free)
+![image](https://github.com/user-attachments/assets/2748df3c-6ca2-4815-ab28-a3120cdc849a)
+
 ![image](https://github.com/user-attachments/assets/c00f67d5-7a41-4b68-b204-5a68235cac4f)
 
 
 After changing the pcileech_fifo.sv file now change the pcileech_pcie_cfg_a7.sv file, also in the src folder after you unzipped the source code, what software to use to change the same depends on personal habits (Vivado open the path to srcs/sources 1/imports/pcileech-xxx/ src/pcileech fifo.sv). src/pcileech fifo.sv), see the rw[127:64] boxed out in the picture, the 16-bit value after h is the firmware DSN, here fill in the DSN (abbreviation of Device Serial Number Capability) read by TeleScan to your card, the 1st DW+2nd DW value added together is not exactly 16 bits? The value in 1st DW+2nd DW should be 16 bits, the value in 2nd DW should be filled in the front, the value in 1st DW should be filled in the back, don't fill in the opposite. Then change rw[21] to 0 and rw[20] to 1 (here it is recommended to keep the default unchanged). change remember to save!
 
-![image.png](https://tc-cdn.flowus.cn/oss/f07c904f-6530-429f-8cdc-0095cc799c13/image.png?time=1744568100&token=831889eb3728d1370b18467e289a8d0fd455084b479f92206aead875abe43af6&role=free)
-![image.png](https://tc-cdn.flowus.cn/oss/d6258fc3-2f05-437f-81ee-83e3e43cd747/image.png?time=1744568100&token=b6ef1a58fbf48c8cd821837234e843c0fd43e08124e7c95a90c496d245b68f2d&role=free)
-![image.png](https://tc-cdn.flowus.cn/oss/8464c44c-c4c6-4ace-84be-3ea8a66f2bbc/image.png?time=1744568100&token=b8cb7bf62d55c36644beccf22b8f737a00fdd72185c6c2a7ac45a4ab9c9ea061&role=free)
+![image](https://github.com/user-attachments/assets/0014d44b-59fc-47ee-88e7-36a1f51740ff)
+![image](https://github.com/user-attachments/assets/8378ad7e-88c4-417e-b8ef-eea7b726c76d)
 
 If you want to change the value after rw[143:128] and rw[199:192], you can fill in the corresponding value read by TeleScan upside down or just fill in the corresponding value (the same as the above rw[143:128]~rw[199:192]-fill in the random value needs to be consistent).
 
-![image.png](https://tc-cdn.flowus.cn/oss/09efe919-5b67-4d66-a58a-98a63fde7a6d/image.png?time=1744568100&token=ece007e0a412b8de3bc8c6e9bdcfd737e99f10b67252a1b61feb245539322de0&role=free)
+![image](https://github.com/user-attachments/assets/6521b228-1bed-46c0-ae3c-fb67668e37cb)
+
 
 ### pcie_7x_0_core_top.v
 
@@ -74,21 +76,27 @@ The second BAES board fills in the offset offset address of the NIC read out by 
 The third BAR board fill Telesan read out the value of the network card's Base Address Register0~5, 04 and 04 end of the BAR after the BAR full F, for example, BAR1/BAR3/BAR5. because bar0 can not be 1 at the end of the 1 is on behalf of the 10, 0 is on behalf of the memory space to be changed to 0 bar2 and bar4 followed by the 4 or C is the 64-bit address, then bar3 and bar5 should be changed to all F.
 
 ![image](https://github.com/user-attachments/assets/e9dfa690-15d8-4527-b2d4-57656306a84f)
-![image.png](https://tc-cdn.flowus.cn/oss/d652db63-bd90-4d97-85dd-6e004aa17d7b/image.png?time=1744568100&token=4f6af34915f5c9c3395e206e75f071f185705e16e220ee42b77dd70d2f6b4ede&role=free)
+![image](https://github.com/user-attachments/assets/97e46cd2-644f-45e4-b75f-77d1fbf784ec)
 
 The following one by one to check and find the changes, as shown in the figure against the modification of each place, Telesan read out the network card has to change to the corresponding value and open (FALSE to TRUE), there is no skip.
-![image.png](https://tc-cdn.flowus.cn/oss/1d096c22-c7cc-4866-98d4-6a247588be00/image.png?time=1744568100&token=536f32a77d641dde409e84d9b5104da40e96ee7d05ac577e2f5ccaeb484e6ba1&role=free)
-![image.png](https://tc-cdn.flowus.cn/oss/760ce7ab-eb4b-4a5f-a384-9695192804ef/image.png?time=1744568100&token=21b5a938e2bd8296001f892e5c2f8ac1a303fdf9450ba23b8cfc5a4c255c0132&role=free)
+
+![image](https://github.com/user-attachments/assets/64848fbb-b6e6-41b0-a7db-5601ef32f090)
+![image](https://github.com/user-attachments/assets/8008baf6-9a89-4d8f-a210-ca01d7fae33c)
 ![image](https://github.com/user-attachments/assets/824970e5-ea8c-4790-989b-022ce77c2179)
-![image.png](https://tc-cdn.flowus.cn/oss/eb46849d-6c0d-484f-8a8e-8e3f1b05e59f/image.png?time=1744568100&token=4bb83d064ce6c9edee85b0790f8a8c66d1107a4029041c1fc935565b7fcea4ef&role=free)
-![image.png](https://tc-cdn.flowus.cn/oss/d813db8a-3ffd-4810-9d1b-8b86ad3d1014/image.png?time=1744568100&token=437851742fa1e4bf65f99b2f36562dc60c290bbc75b99a335316c7893887666d&role=free)
-![image.png](https://tc-cdn.flowus.cn/oss/7fa7f676-82bf-4725-a1cc-ebfb987cc74e/image.png?time=1744568100&token=2fa37ab10b4071a17f50c2b7709b8725716e44a338045309574c260f6045828e&role=free)
-![image.png](https://tc-cdn.flowus.cn/oss/13041461-6ff5-49e9-b5ee-0ea451f2fe33/image.png?time=1744568100&token=c63ab0da5e7ece72a2fc9007ad851185a55f7706304a2b64fe71b039db760a91&role=free)
-![image.png](https://tc-cdn.flowus.cn/oss/0a28bb0e-3124-43b8-999c-75a87197d1cc/image.png?time=1744568100&token=28f8b05f16101fa45027938d7f8c7514ac4afcf52c75e4be915b69e68ee181f3&role=free)
-![image.png](https://tc-cdn.flowus.cn/oss/4144d1ae-2688-4520-aed1-a683381d93e4/image.png?time=1744568100&token=24fac9b38aab4f1a471efe34c8d9c6303b7bb210663de41b548e21de3dd1132a&role=free)
+![image](https://github.com/user-attachments/assets/88bb4176-d6b6-442b-b849-af70bf2c0697)
+![image](https://github.com/user-attachments/assets/55a4edc1-41e3-42b0-b71b-cdc98ecf0f74)
+![image](https://github.com/user-attachments/assets/4cb13634-f0be-48ad-bb74-9030d3437b9a)
+![image](https://github.com/user-attachments/assets/471f914b-fb47-4cba-a954-5b1ab9135875)
+![image](https://github.com/user-attachments/assets/b6b15064-a9ab-4a1e-984f-27bee2ffaf56)
+![image](https://github.com/user-attachments/assets/09a4c272-e195-4f5d-86de-9346c9363187)
 ![image](https://github.com/user-attachments/assets/fef12c92-f1d0-4688-86de-e858e7b93203)
-![image.png](https://tc-cdn.flowus.cn/oss/ad146e45-a85f-4a99-a315-e0ad2fe20883/image.png?time=1744568100&token=c7104c0702470d640cc5f6f6dda4b627856b4857938cdfba02eb1e2cf1c17f33&role=free)
-![image.png](https://tc-cdn.flowus.cn/oss/f21816e3-6b42-468d-8ffa-992e4e460f9d/image.png?time=1744568100&token=525b41d124a9563fdc0e6cfda9f8ee211db25d337c19beebd683564d8e860eb3&role=free)
+![image](https://github.com/user-attachments/assets/88a900b2-629c-4b96-aaca-e169b73fa046)
+![image](https://github.com/user-attachments/assets/1a12dcc2-4c9c-496b-a94c-3efe74ead864)
+![image](https://github.com/user-attachments/assets/e94e57d9-a884-461c-b5c9-9a86502dfa4f)
+![image](https://github.com/user-attachments/assets/f9fea5cc-332b-4b0c-8fb6-9bd4d0feb770)
+![image](https://github.com/user-attachments/assets/897d8ace-9abb-47de-bb71-47eac1cd7158)
+![image](https://github.com/user-attachments/assets/2c2d476d-4108-42b0-b4c0-3c951b812321)
+![image](https://github.com/user-attachments/assets/db0fdaa4-929e-40ce-886a-e27939ad5e77)
 
 ### Let's generate the firmware.
 
