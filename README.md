@@ -50,7 +50,8 @@ If you want to change the value after rw[143:128]~rw[199:192], you can fill in t
 
 ![image](https://github.com/user-attachments/assets/2748df3c-6ca2-4815-ab28-a3120cdc849a)
 
-![image](https://github.com/user-attachments/assets/c00f67d5-7a41-4b68-b204-5a68235cac4f)
+![image](https://github.com/user-attachments/assets/95a5ef89-d9bc-4126-8ef7-83d7f1906d0a)
+
 
 
 After changing the pcileech_fifo.sv file now change the pcileech_pcie_cfg_a7.sv file, also in the src folder after you unzipped the source code, what software to use to change the same depends on personal habits (Vivado open the path to srcs/sources 1/imports/pcileech-xxx/ src/pcileech fifo.sv). src/pcileech fifo.sv), see the rw[127:64] boxed out in the picture, the 16-bit value after h is the firmware DSN, here fill in the DSN (abbreviation of Device Serial Number Capability) read by TeleScan to your card, the 1st DW+2nd DW value added together is not exactly 16 bits? The value in 1st DW+2nd DW should be 16 bits, the value in 2nd DW should be filled in the front, the value in 1st DW should be filled in the back, don't fill in the opposite. Then change rw[21] to 0 and rw[20] to 1 (here it is recommended to keep the default unchanged). change remember to save!
@@ -60,7 +61,7 @@ After changing the pcileech_fifo.sv file now change the pcileech_pcie_cfg_a7.sv 
 
 If you want to change the value after rw[143:128] and rw[199:192], you can fill in the corresponding value read by TeleScan upside down or just fill in the corresponding value (the same as the above rw[143:128]~rw[199:192]-fill in the random value needs to be consistent).
 
-![image](https://github.com/user-attachments/assets/6521b228-1bed-46c0-ae3c-fb67668e37cb)
+![image](https://github.com/user-attachments/assets/7fb56ebb-f260-43b8-a033-a79c8e542643)
 
 
 ### pcie_7x_0_core_top.v
