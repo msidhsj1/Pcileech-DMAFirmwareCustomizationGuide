@@ -1,5 +1,4 @@
 # Pcileech-FirmwareCustomizationGuide
-### This guide teaches you how to stand on the shoulders of giants and use open source projects to make your own private firmware.
 
 **🤬I hate scammers who make crap firmware and sell it at inflated prices, and people who like to be vague in their guidelines.**
 
